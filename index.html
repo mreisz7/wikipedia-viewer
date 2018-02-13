@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>MReisz.com - Wikipedia Viewer</title>
+  <meta name="description" content="Wikipedia Viewer">
+  <meta name="author" content="Michael Reisz">
+  <meta name='viewport' content='user-scalable=0'/>
+
+  <link rel="stylesheet" href="./assets/css/wiki-viewer.min.css">
+</head>
+<body>
+
+  <header>
+    <div id="search-bar">
+      <input type="text" id="wiki-search" />
+    </div>
+  </header>
+
+  <div id="results-and-content">
+    <div id="results">
+    </div>
+    <div id="content-container">
+      <iframe id="content"></iframe>
+    </div>
+  </div>
+
+  <footer>
+    <span id="copyright">&copy; 2018 Michael Reisz</span>
+    <a id="footer-link" href="http://www.mreisz.com/" target="_blank">MReisz.com</a>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		 crossorigin="anonymous"></script>
+  <script src="assets/js/wiki-viewer.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+$background-color:  #111111;
+$font-color:        #FFFFFF;
+$session-circle:    #37ba16;
+$timer-diameter:    23em;
+$timer-circumference: ($timer-diameter * 3.14159);
+$timer-stroke:      1em;
+$break-circle:      #0081ff;
+
+header,
+footer,
+div {
+  border: 1px solid white;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  font-size: 15px;
+}
+
+@media (min-resolution: 192dpi),
+(-webkit-min-device-pixel-ratio: 2),
+(min--moz-device-pixel-ratio: 2),
+(-o-min-device-pixel-ratio: 2/1),
+(min-device-pixel-ratio: 2),
+(min-resolution: 2dppx) {
+  html {
+    font-size: 30px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3),
+(min--moz-device-pixel-ratio: 3),
+(-o-min-device-pixel-ratio: 3/1),
+(min-device-pixel-ratio: 3),
+(min-resolution: 3dppx) {
+  html {
+    font-size: 40px;
+  }
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  background: $background-color;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  flex: none;
+}
+
+#results-and-content {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+
+  #results {
+    flex: none;
+    overflow: auto;
+    height: 100%;
+  }
+
+  #content-container {
+    flex: 1;
+    overflow: auto;
+    height: 100%;
+  }
+}
+
+footer {
+  display: flex;
+  flex: flow;
+
+   #copyright {
+     flex: 1;
+     color: #fff;
+   }
+
+   #footer-link {
+     flex: none;
+     color: #fff;
+
+     &:hover {
+       color: #eee;
+     }
+  }
+}
