@@ -1,16 +1,11 @@
-$background-color:  #111111;
-$font-color:        #FFFFFF;
-$session-circle:    #37ba16;
-$timer-diameter:    23em;
-$timer-circumference: ($timer-diameter * 3.14159);
-$timer-stroke:      1em;
-$break-circle:      #0081ff;
+$background-color:  #DDDDDD;
+$font-color:        #112211;
 
-header,
-footer,
-div {
-  border: 1px solid white;
-}
+// header,
+// footer,
+// div {
+//   border: 1px solid white;
+// }
 
 * {
   box-sizing: border-box;
@@ -56,6 +51,7 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
+  color: $font-color;
 }
 
 header {
@@ -71,27 +67,40 @@ header {
     flex: none;
     overflow: auto;
     height: 100%;
+    padding: 1em;
+
+    #random {
+      cursor: pointer;
+    }
   }
 
   #content-container {
     flex: 1;
     overflow: auto;
     height: 100%;
+    padding: 0;
+    margin: 0;
+
+    #content {
+      height: 100%;
+      width: 100%;
+      margin: -.25em;
+      padding: 0;
+    }
   }
 }
 
 footer {
   display: flex;
-  flex: flow;
+  flex-flow: row nowrap;
+  padding: .5em 2em;
 
    #copyright {
      flex: 1;
-     color: #fff;
    }
 
    #footer-link {
      flex: none;
-     color: #fff;
 
      &:hover {
        color: #eee;
