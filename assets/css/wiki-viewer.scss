@@ -10,11 +10,6 @@ $font-color:        #112211;
 * {
   box-sizing: border-box;
   font-family: 'Arial', sans-serif;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
 }
 
 html {
@@ -54,22 +49,74 @@ body {
   color: $font-color;
 }
 
-header {
-  flex: none;
-}
-
 #results-and-content {
   display: flex;
   flex-flow: row nowrap;
   flex: 1;
+  overflow: hidden;
 
   #results {
+    display: flex;
+    flex-flow: column nowrap;
     flex: none;
-    overflow: auto;
     height: 100%;
-    padding: 1em;
+    width: 25em;
+    padding: 0 1em;
+
+    h1 {
+      flex: none;
+    }
+
+    #search-form {
+      width: 100%;
+
+      #wiki-search {
+        width: 100%;
+        font-size: 1.25em;
+        border-radius: 5px;
+        padding: .25em .5em;
+      }
+    }
+
+    #results-list {
+      flex: 1;
+      list-style: none;
+      display: flex;
+      flex-flow: column nowrap;
+      overflow-y: auto;
+      padding: 0;
+
+      li {
+
+        .card {
+          border: 1px solid #000;
+          margin: 0 1em 1.5em;
+          padding: 1em;
+          background-color: white;
+          cursor: pointer;
+
+          &[selected] {
+            background-color: blue;
+            color: white;
+          }
+
+          &:hover {
+            box-shadow: -.5em 0 blue;
+          }
+
+          h1 {
+            margin: 0 0 1rem;
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
 
     #random {
+      flex: none;
       cursor: pointer;
     }
   }
