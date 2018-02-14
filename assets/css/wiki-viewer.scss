@@ -1,5 +1,11 @@
-$background-color:  #DDDDDD;
-$font-color:        #112211;
+$background-color:    #222629;
+$font-color:          #FFFFFF;
+$card-color:          #9D8D8F;
+$card-font-color:     #222629;
+$selected-card:       #222629;
+$selected-font:       #FAED26;
+$card-border:         #FAED26;
+$content-background:  #FFFFFF;
 
 // header,
 // footer,
@@ -55,6 +61,11 @@ body {
   flex: 1;
   overflow: hidden;
 
+  #search-offset {
+    flex: 1;
+    background-color: $content-background;
+  }
+
   #results {
     display: flex;
     flex-flow: column nowrap;
@@ -65,6 +76,7 @@ body {
 
     h1 {
       flex: none;
+      text-align: center;
     }
 
     #search-form {
@@ -89,19 +101,20 @@ body {
       li {
 
         .card {
-          border: 1px solid #000;
+          border: 1px solid $card-border;
           margin: 0 1em 1.5em;
           padding: 1em;
-          background-color: white;
+          background-color: $card-color;
           cursor: pointer;
 
           &[selected] {
-            background-color: blue;
-            color: white;
+            background-color: $selected-card;
+            color: $selected-font;
           }
 
+          &[selected],
           &:hover {
-            box-shadow: -.5em 0 blue;
+            box-shadow: -.25em 0 $card-border;
           }
 
           h1 {
@@ -115,14 +128,32 @@ body {
       }
     }
 
-    #random {
+    #footer-container {
+      display: flex;
+      flex-flow: row nowrap;
       flex: none;
-      cursor: pointer;
+      align-items: center;
+
+
+      #copyright {
+        flex: 1;
+        padding: 1em;
+        font-size: .75em;
+        font-style: italic;
+      }
+
+      #random {
+        flex: none;
+        text-align: center;
+        margin: 1em;
+        cursor: pointer;
+      }
     }
   }
 
   #content-container {
     flex: 1;
+    background-color: $content-background;
     overflow: auto;
     height: 100%;
     padding: 0;
@@ -134,23 +165,5 @@ body {
       margin: -.25em;
       padding: 0;
     }
-  }
-}
-
-footer {
-  display: flex;
-  flex-flow: row nowrap;
-  padding: .5em 2em;
-
-   #copyright {
-     flex: 1;
-   }
-
-   #footer-link {
-     flex: none;
-
-     &:hover {
-       color: #eee;
-     }
   }
 }

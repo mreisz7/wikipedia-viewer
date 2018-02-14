@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="./assets/css/wiki-viewer.min.css">
 </head>
 <body>
-
   <div id="results-and-content">
+    <div id="search-offset">
+    </div>
     <div id="results">
       <h1>Wikipedia Search</h1>
       <div id="search-bar">
@@ -22,17 +23,15 @@
       </div>
       <ul id="results-list">
       </ul>
-      <h4 id="random">Feeling Lucky?</h4>
+      <div id="footer-container">
+        <span id="copyright">&copy; 2018 Michael Reisz</span>
+        <h4 id="random">Feeling Lucky?</h4>
+      </div>
     </div>
     <div id="content-container">
       <iframe id="content" src="" seamless="seamless" frameborder="0"></iframe>
     </div>
   </div>
-
-  <footer>
-    <span id="copyright">&copy; 2018 Michael Reisz</span>
-    <a id="footer-link" href="http://www.mreisz.com/" target="_blank">MReisz.com</a>
-  </footer>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
 	   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
