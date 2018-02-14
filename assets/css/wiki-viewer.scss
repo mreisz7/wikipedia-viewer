@@ -6,12 +6,7 @@ $selected-card:       #222629;
 $selected-font:       #FAED26;
 $card-border:         #FAED26;
 $content-background:  #FFFFFF;
-
-// header,
-// footer,
-// div {
-//   border: 1px solid white;
-// }
+$danger-color:        #ff4200;
 
 * {
   box-sizing: border-box;
@@ -61,11 +56,6 @@ body {
   flex: 1;
   overflow: hidden;
 
-  #search-offset {
-    flex: 1;
-    background-color: $content-background;
-  }
-
   #results {
     display: flex;
     flex-flow: column nowrap;
@@ -73,6 +63,7 @@ body {
     height: 100%;
     width: 25em;
     padding: 0 1em;
+    animation: all 1s linear;
 
     h1 {
       flex: none;
@@ -80,13 +71,32 @@ body {
     }
 
     #search-form {
+      position: relative;
       width: 100%;
 
       #wiki-search {
         width: 100%;
         font-size: 1.25em;
         border-radius: 5px;
-        padding: .25em .5em;
+        padding: .25em 3em .25em .5em;
+        border: 2px solid white
+      }
+
+      #reset-search {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        margin: 0;
+        padding: 0 1rem;
+        background-color: $danger-color;
+        color: $font-color;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken($danger-color, 5%);
+        }
       }
     }
 
@@ -118,6 +128,7 @@ body {
           }
 
           h1 {
+            text-align: left;
             margin: 0 0 1rem;
           }
 

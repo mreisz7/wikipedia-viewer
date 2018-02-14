@@ -20,6 +20,12 @@ $(document).ready(function() {
     loadRandomWiki();
   });
 
+  $('#reset-search').on('click', function() {
+    clearSearchResults();
+    blankOutContent();
+    search.val('');
+  })
+
 });
 
 
@@ -28,13 +34,11 @@ function loadRandomWiki() {
   var randURL = "https://en.wikipedia.org/wiki/Special:Random";
   clearSearchResults();
   clearSelected();
-  $('#search-offset').hide();
   iframe.attr('src', randURL);
   iframe.show();
 }
 
 function blankOutContent() {
-  $('#search-offset').show();
   iframe.hide();
 }
 
@@ -50,7 +54,6 @@ function wikiSearch() {
   })
   .done(function(response) {
     console.log(response);
-    $('#search-offset').hide();
     renderResults(response.query.pages);
   });
 }
@@ -92,5 +95,6 @@ function clearSelected() {
 }
 
 function clearSearchResults() {
+  clearSelected();
   $('#results-list').empty();
 }
