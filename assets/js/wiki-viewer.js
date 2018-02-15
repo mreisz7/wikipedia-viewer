@@ -67,6 +67,7 @@ function renderResults(results) {
       '<div class="card" data-page-id=' + results[key].pageid + '>',
       '<h1>' + results[key].title + '</h1>',
       '<p>' + results[key].extract + '</p>',
+      '<a class="mobile-overlay" href="https://en.wikipedia.org/?curid=' + results[key].pageid + ' target="_blank"></a>',
       '</div>',
       '</li>'
     ].join('');

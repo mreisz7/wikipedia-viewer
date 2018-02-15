@@ -65,9 +65,34 @@ body {
     padding: 0 1em;
     animation: all 1s linear;
 
-    h1 {
+    #results-header {
+      display: flex;
+      flex-flow: row nowrap;
       flex: none;
-      text-align: center;
+      align-items: center;
+
+      #mr-link {
+        flex: 1;
+
+        #mr-logo {
+          flex: 1;
+          height: 2em;
+          width: auto;
+
+          #logo-m {
+            fill: white;
+          }
+
+          #logo-r {
+            fill: red;
+          }
+        }
+      }
+
+      h1 {
+        flex: none;
+        text-align: right;
+      }
     }
 
     #search-form {
@@ -135,6 +160,10 @@ body {
           p {
             margin: 0;
           }
+
+          .mobile-overlay {
+            display: none;
+          }
         }
       }
     }
@@ -155,9 +184,12 @@ body {
 
       #random {
         flex: none;
-        text-align: center;
         margin: 1em;
         cursor: pointer;
+      }
+
+      #random-mobile {
+        display: none;
       }
     }
   }
@@ -177,4 +209,80 @@ body {
       padding: 0;
     }
   }
+}
+
+@media (min-resolution: 192dpi) and (max-width: 800px),
+       (-webkit-min-device-pixel-ratio: 2) and (max-width: 800px),
+       (min--moz-device-pixel-ratio: 2) and (max-width: 800px),
+       (-o-min-device-pixel-ratio: 2/1) and (max-width: 800px),
+       (min-device-pixel-ratio: 2) and (max-width: 800px),
+       (min-resolution: 2dppx) and (max-width: 800px),
+       (-webkit-min-device-pixel-ratio: 3) and (max-width: 1200px),
+       (min--moz-device-pixel-ratio: 3) and (max-width: 1200px),
+       (-o-min-device-pixel-ratio: 3/1) and (max-width: 1200px),
+       (min-device-pixel-ratio: 3) and (max-width: 1200px),
+       (min-resolution: 3dppx) and (max-width: 1200px)  {
+
+  body {
+    height: auto;
+    width: auto;
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow: auto;
+  }
+
+  #results-and-content {
+    // display: block;
+    overflow: auto;
+    width: 100%;
+
+    #results {
+      flex-flow: column nowrap;
+      height: auto;
+      width: 100%;
+
+      #results-list {
+        overflow-y: visible;
+
+        li .card {
+          position: relative;
+
+          .mobile-overlay {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: transparent;
+          }
+        }
+      }
+
+      #footer-container {
+        display: flex;
+        flex-flow: row nowrap;
+        flex: none;
+        align-items: center;
+
+        #random {
+          display: none;
+        }
+
+        #random-mobile {
+          color: $font-color;
+          text-decoration: none;
+          display: block;
+          flex: none;
+          margin: 1em;
+          cursor: pointer;
+        }
+      }
+    }
+
+    #content-container {
+      display: none;
+    }
+  }
+
 }
